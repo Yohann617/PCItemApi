@@ -5,9 +5,14 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({  //新建Schema实例
-	name: String,
-	password: String,
-	id: Number
+  name: String,
+  age: Number,
+  password: String,
+  account: String,
+  authority:String,
+  level:String,
+  phoneNumber:Number,
+  headPicUrl:String
 })
 
 const Users = mongoose.model('users', usersSchema);

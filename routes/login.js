@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-import formidable from 'formidable';  //序列化form表单，第三方插件
 import Login from '../controller/login/login'
 
 /* GET users listing. */

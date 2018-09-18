@@ -30,7 +30,7 @@ class Login{
       return
     }
     try{
-      const user = await UsersModel.findOne({'name':account});
+      const user = await UsersModel.findOne({'account':account});
       console.log(user);
 
       // 用户不存在
@@ -54,6 +54,7 @@ class Login{
           status: 1,
           type: 'SUCCESS',
           message: '登陆成功!',
+          data: user
         })
         return 
       }

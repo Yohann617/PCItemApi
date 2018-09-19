@@ -12,6 +12,7 @@ const usersSchema = new Schema({  //新建Schema实例
   authority:String,
   level:String,
   phoneNumber:Number,
+  userEmail:String,
   headPicUrl:String
 })
 

@@ -6,26 +6,28 @@ import Users from '../../models/admin/admin';
 class Admin{
   constructor(){
     //定义实例属性
-    this.login = this.login.bind(this)  //登陆
+    this.getUserInfo = this.getUserInfo.bind(this)  //获取用户信息
   };
   /**
    * 获取用户信息
   */
-  async login(req, res, next){   //异步函数
-    //console.log(req);
-    const admin = await Users.findOne({"name":"Yohann"},function(err,docs){  //await表示紧跟在后面的表达式需要等待结果。
+  async getUserInfo(req, res, next){
+    const { account } = req.body;
+    //console.log(account);
+    const userInfo = await Users.findOne({"account":account},function(err,docs){ 
       if(err){
         console.log(err);
       };
       return docs;
     });
       
-    console.log("admin-controller",admin);
-    if(admin){
+    console.log(userInfo);
+
+    if(userInfo){
       res.send({
         status: 0,
-        data: admin,
-        message:"登陆成功"
+        data: userInfo,
+        message:"登陆成功11"
       })
       return
     }else{

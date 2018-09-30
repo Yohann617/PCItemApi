@@ -37,8 +37,14 @@ const Schema = mongoose.Schema;
 
 const adminSchema = new Schema({  //新建Schema实例
 	name: String,
-	age: String,
-	id: Number
+	age: Number,
+	password: String,
+	account: String,
+	authority:String,
+	level:String,
+	phoneNumber:Number,
+	userEmail:String,
+	headPicUrl:String
 })
 
 const Users = mongoose.model('Users', adminSchema);

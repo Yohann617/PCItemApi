@@ -13,6 +13,7 @@ var registRouter = require('./routes/regist');
 var adminRouter = require('./routes/admin');
 var guessLikeRouter = require('./routes/guessLike');
 var recommendRouter = require('./routes/recommend');
+var personalRouter = require('./routes/personal');
 
 var app = express();
 
@@ -69,6 +70,7 @@ app.use('/regist', registRouter);
 app.use('/admin', adminRouter);
 app.use('/guessLike', guessLikeRouter);
 app.use('/recommend', recommendRouter);
+app.use('/personal', personalRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

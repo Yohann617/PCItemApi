@@ -21,7 +21,7 @@ class Login{
         throw new Error('密码参数错误');
       }
     }catch(err){
-      //console.log('登陆参数错误', err);
+      console.log('登陆参数错误', err);
       res.send({
         status: 0,
         type: 'ERROR_QUERY',
@@ -35,14 +35,14 @@ class Login{
 
       // 用户不存在
       if (!user) {
-        //console.log('用户不存在');
+        console.log('用户不存在');
         res.send({
           status: 0,
           type: 'NO_USER',
           message: '用户不存在',
         })
       }else if (user.password.toString() !== password.toString()) {
-        //console.log('用户登录密码错误')
+        console.log('用户登录密码错误')
         res.send({
           status: 0,
           type: 'ERROR_PASSWORD',
@@ -59,7 +59,7 @@ class Login{
         return 
       }
     }catch(err){
-      //console.log('用户登陆失败', err);
+      console.log('用户登陆失败', err);
       res.send({
         status: 0,
         type: 'SAVE_USER_FAILED',
